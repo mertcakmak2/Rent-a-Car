@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+   
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="../Controller/login.js"></script>
+    <script src="../Model/Databasehandler.js"></script>
+    <script src="../Model/assistant.js"></script>
+    <script src="../Model/user.js"></script>
+    <link rel="stylesheet" type="text/css" href="../Css/login.css">
+
+</head>
+<body onload="local_Storage()">
+    <h1>Login Ekranı</h1>
+
+    <form>
+            <div class="container">
+              <h1>Kaydol</h1>
+              <hr>
+          
+              <label for="email"><b>Kullanıcı Adı</b></label>
+              <input type="text" placeholder="Kullanıcı Adınızı Girin.." id="kayitKulAdi">
+          
+              <label for="psw"><b>Şifre</b></label>
+              <input type="password" placeholder="Şifrenizi Girin.." id="kayitSifre" >
+          
+              <label for="psw-repeat"><b>E-Mail</b></label>
+              <input type="email" placeholder="E-Mail Adresinizi Girin.." id="kayitMail">      
+          
+              <input type="button" value="Kaydol" id="kayitol" class="registerbtn" onclick=" userAdd()">
+              
+              <h1>Giriş Yap</h1>
+              <hr>
+          
+              <label for="email"><b>Kullanıcı Adı</b></label>
+              <input type="text" placeholder="Kullanıcı Adınızı Girin.." id="kullaniciAdi" >
+          
+              <label for="psw"><b>Şifre</b></label>
+              <input type="password" placeholder="Şifrenizi Girin.." id="kullaniciSifre" >     
+          
+              <input type="button" value="Giriş Yap" id="girisyap" class="registerbtn" onclick="userCheck()">
+            </div>
+            </form>
+
+</body>
+
+</html>

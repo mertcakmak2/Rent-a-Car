@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="../Controller/homepage.js"></script>
+    <script src="../Model/Databasehandler.js"></script>
+    <script src="../Model/assistant.js"></script>
+    <script src="../Model/vehicle.js"></script>
+    <script src="../Model/packet.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../Css/popup.css">
+
+
+</head>
+<body style="margin:10px">
+        <a href="login.html"><input type="button" id="cikisyap" value="Çıkış Yap">  </a>
+
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-sm-12">
+                    
+                    <div id="kayitDefteri">
+                        <br>
+                        <br>
+                        <div class="row " style="max-height: 80vh !important; overflow-y:scroll">
+                            <table class="table table-hover table-responsive">
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Araba Markası</th>
+                                        <th>Araba Modeli</th>
+                                        <th>Kasa Tipi</th>
+                                        <th>Vites Türü</th>
+                                        <th>Yakıt Türü</th>
+                                        <th>Ücreti</th>
+                                        <th>Araç Resim</th>
+                                        <th>Tarih</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="tablo">
+                                </tbody>
+                            </table>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <form>
+                                            <div class="row">
+                                                <div class="col-2">
+                                                    <input type="text" id="notMarka" class="form-control"
+                                                        placeholder="Araba Markası">
+                                                </div>
+                                                <div class="col-2">
+                                                    <input type="text" id="notModel" class="form-control"
+                                                        placeholder="Araba Modeli">
+                                                </div>
+                                                <div class="col-2">
+                                                    <input type="text" id="notKasa" class="form-control"
+                                                        placeholder="Araba Kasa Tipi">
+                                                </div>
+                                                <div class="col-2">
+                                                    <input type="text" id="notVites" class="form-control"
+                                                        placeholder="Araba Vites Türü">
+                                                </div>
+                                                <div class="col-2">
+                                                    <input type="text" id="notYakit" class="form-control"
+                                                        placeholder="Araba Yakıt Türü">
+                                                </div>
+                                                <div class="col-1">
+                                                    <input type="text" id="notUcreti" class="form-control"
+                                                        placeholder="Ücreti">
+                                                </div>
+    
+                                                <div class="col-1">
+                                                    <input value="Ekle" type="button" id="notKaydet"
+                                                        class="btn btn-primary" onclick="CarAdd()" style="width: 60px; height: 40px;">
+                                                </div>
+                                                <br>
+                                                <br>
+                                                <div>
+                                                    <input type="file" onchange="dosyaOnizle()"><br>
+                                                    <img id="notImage" src="" height="100">
+                                                </div>
+    
+    
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <button class="open-button" onclick="openForm()">Sepeti Görüntüle</button>
+    
+        <div class="form-popup" id="myForm">
+            <form class="form-container">
+                <h1>Sepet</h1>
+                <div class="row " style="max-height: 80vh !important; overflow-y:scroll">
+                    <table id="sepetpop" class="table table-hover table-responsive">
+                        <thead>
+                            <tr>
+                                <th>Kullanıcı Adı</th>
+                                <th>Araba Markası</th>
+                                <th>Araba Modeli</th>
+                                <th>Ücret</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tablosepet">
+                        </tbody>
+                    </table>
+                </div>
+    
+                <div id="kartdiv">
+                    Kart Numarası:
+                    <input type="text" id="kartno">
+                </div>
+                <h3 id="uyari">Sepetinizde hiç araç bulunmamaktadır.Lütfen araç seçin.</h3>
+                <button type="button" id="odebtn" onclick="PacketPay()" class="btn">Ödeme Yap</button>
+                <button type="button" class="btn cancel" onclick="closeForm()">Kapat</button>
+            </form>
+        </div>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"> </script>
+       
+</body>
+</html>
